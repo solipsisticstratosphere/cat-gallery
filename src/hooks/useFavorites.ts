@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Cat } from "../types/types";
 
 export const useFavorites = () => {
