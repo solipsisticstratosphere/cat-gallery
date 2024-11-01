@@ -3,7 +3,7 @@ import { useCatContext } from "../../context/catContext";
 import { Breed } from "../../types/types";
 
 interface BreedFilterProps {
-  breeds: Breed[]; // Делает `breeds` обязательным
+  breeds: Breed[];
 }
 
 const BreedFilter: React.FC<BreedFilterProps> = ({ breeds }) => {
@@ -11,12 +11,12 @@ const BreedFilter: React.FC<BreedFilterProps> = ({ breeds }) => {
 
   return (
     <select
-      className="p-2 mb-4 border"
+      className="h-12 px-4 border border-gray-300 rounded-lg text-gray-700"
       value={breed}
-      onChange={(e) => setBreed?.(e.target.value)} // Безопасная проверка для `setBreed`
+      onChange={(e) => setBreed(e.target.value)}
     >
       <option value="">All Breeds</option>
-      {breeds?.map((b) => (
+      {breeds.map((b) => (
         <option key={b.id} value={b.id}>
           {b.name}
         </option>
